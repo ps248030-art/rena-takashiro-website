@@ -14,7 +14,7 @@
     }
 
     :root {
-      --primary: #1a1a2e;
+      --primary: #1a2947;
       --accent: #c9a668;
       --light: #f8f6f3;
       --text: #2d2d2d;
@@ -55,27 +55,32 @@
     }
 
     .logo-box {
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
       background: var(--primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 20px;
+      overflow: hidden;
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .site-title h1 {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 300;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       border-bottom: 1px solid var(--accent);
       padding-bottom: 3px;
     }
 
     .site-title p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 12px;
+      font-size: 13px;
       font-style: italic;
       color: #666;
       margin-top: 3px;
@@ -86,7 +91,7 @@
       margin-left: 40px;
       text-decoration: none;
       color: var(--text);
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 300;
       letter-spacing: 2px;
       transition: color 0.3s;
@@ -99,41 +104,94 @@
 
     /* ヒーローセクション */
     .hero {
-      margin-top: 90px;
-      padding: 80px 40px;
-      background: linear-gradient(to bottom, #faf9f7, #f0ede8);
+      margin-top: 95px;
+      padding: 100px 40px;
+      background: linear-gradient(135deg, #faf9f7 0%, #f0ede8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201,166,104,0.1) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
     .hero-inner {
-      max-width: 1400px;
+      max-width: 1300px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 400px 1fr;
-      gap: 60px;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
       align-items: start;
     }
 
-    .hero-image {
+    .hero-image-main {
       position: relative;
     }
 
-    .hero-image img {
+    .hero-image-main img {
       width: 100%;
-      height: auto;
-      display: block;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      height: 450px;
+      object-fit: cover;
+      object-position: center 20%;
+      border-radius: 4px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+    }
+
+    .hero-image-side img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 4px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
     }
 
     .hero-content {
-      padding-top: 40px;
+      padding: 40px 0;
     }
 
-    .hero-content img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
+    .hero-title {
       margin-bottom: 40px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+
+    .hero-title h2 {
+      font-size: 56px;
+      font-weight: 300;
+      letter-spacing: 8px;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .hero-title p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-style: italic;
+      color: #999;
+      letter-spacing: 3px;
+    }
+
+    .hero-description {
+      font-size: 16px;
+      line-height: 2;
+      color: #666;
+      margin-bottom: 50px;
+      font-weight: 300;
     }
 
     .contact-info {
@@ -154,6 +212,7 @@
       font-size: 13px;
       color: var(--text);
       text-decoration: none;
+      transition: color 0.3s;
     }
 
     .contact-item:hover {
@@ -172,7 +231,7 @@
 
     /* プロフィールセクション */
     .profile-section {
-      padding: 100px 40px;
+      padding: 120px 40px;
       background: white;
     }
 
@@ -181,14 +240,19 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1.5fr;
-      gap: 80px;
+      gap: 100px;
       align-items: center;
+    }
+
+    .profile-image {
+      position: relative;
     }
 
     .profile-image img {
       width: 100%;
       height: auto;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.2);
+      border-radius: 2px;
     }
 
     .profile-content {
@@ -205,13 +269,13 @@
     .profile-header h2 {
       font-size: 42px;
       font-weight: 300;
-      letter-spacing: 5px;
+      letter-spacing: 6px;
       margin-bottom: 10px;
     }
 
     .profile-header p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
+      font-size: 22px;
       font-style: italic;
       color: #999;
       letter-spacing: 2px;
@@ -219,39 +283,39 @@
 
     .profile-table {
       display: grid;
-      gap: 25px;
+      gap: 28px;
     }
 
     .profile-row {
       display: grid;
       grid-template-columns: 200px 1fr;
-      padding-bottom: 20px;
+      padding-bottom: 22px;
       border-bottom: 1px solid #e8e8e8;
     }
 
     .profile-label {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
+      font-size: 17px;
       color: #666;
       font-weight: 300;
     }
 
     .profile-value {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 300;
     }
 
     .company-credit {
-      margin-top: 40px;
+      margin-top: 50px;
       text-align: center;
-      font-size: 12px;
+      font-size: 13px;
       color: #999;
       letter-spacing: 1px;
     }
 
     /* ヒストリーセクション */
     .history-section {
-      padding: 100px 40px;
+      padding: 120px 40px;
       background: linear-gradient(135deg, #fffbf5 0%, #faf8f3 100%);
       position: relative;
     }
@@ -281,22 +345,22 @@
       font-style: italic;
       color: rgba(201,166,104,0.4);
       margin-bottom: 60px;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
     }
 
     .history-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 60px;
+      gap: 80px;
     }
 
     .history-category h3 {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 400;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       color: var(--primary);
-      letter-spacing: 2px;
-      padding-bottom: 15px;
+      letter-spacing: 3px;
+      padding-bottom: 18px;
       border-bottom: 2px solid var(--accent);
     }
 
@@ -306,16 +370,16 @@
     }
 
     .history-list li {
-      padding: 12px 0;
-      font-size: 15px;
+      padding: 14px 0;
+      font-size: 16px;
       font-weight: 300;
-      line-height: 1.8;
+      line-height: 1.9;
       color: #444;
     }
 
     .history-list li::before {
       content: '—';
-      margin-right: 12px;
+      margin-right: 15px;
       color: var(--accent);
     }
 
@@ -326,14 +390,14 @@
 
     /* ファンクラブセクション */
     .fanclub-section {
-      padding: 100px 40px;
+      padding: 120px 40px;
       background: linear-gradient(135deg, #fef9e7 0%, #fcf3d9 100%);
       position: relative;
       overflow: hidden;
     }
 
     .fanclub-inner {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
       text-align: center;
       position: relative;
@@ -341,43 +405,43 @@
     }
 
     .fanclub-title {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 300;
-      letter-spacing: 4px;
-      margin-bottom: 15px;
+      letter-spacing: 5px;
+      margin-bottom: 20px;
     }
 
     .fanclub-subtitle {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 300;
       color: #666;
-      margin-bottom: 60px;
-      letter-spacing: 2px;
+      margin-bottom: 70px;
+      letter-spacing: 3px;
     }
 
     .fanclub-links {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      margin-bottom: 60px;
+      gap: 25px;
+      margin-bottom: 70px;
     }
 
     .fanclub-link {
       background: white;
-      padding: 25px 40px;
-      border-radius: 50px;
+      padding: 28px 50px;
+      border-radius: 60px;
       text-decoration: none;
       color: var(--text);
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 300;
-      letter-spacing: 2px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
+      letter-spacing: 3px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      transition: all 0.4s ease;
     }
 
     .fanclub-link:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.18);
       background: var(--accent);
       color: white;
     }
@@ -385,9 +449,10 @@
     .fanclub-footer {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      font-size: 13px;
+      gap: 40px;
+      font-size: 14px;
       color: #999;
+      margin-bottom: 60px;
     }
 
     .fanclub-footer a {
@@ -402,13 +467,24 @@
 
     .pixel-character {
       position: absolute;
-      right: 8%;
-      bottom: 8%;
-      width: 180px;
-      height: 250px;
-      background: rgba(255,255,255,0.5);
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      right: 10%;
+      bottom: 10%;
+      width: 200px;
+      height: 280px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .pixel-character img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
 
     /* フッター */
@@ -416,14 +492,14 @@
       background: var(--primary);
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
     footer p {
       font-size: 13px;
       font-weight: 300;
       letter-spacing: 2px;
-      margin: 5px 0;
+      margin: 8px 0;
       opacity: 0.8;
     }
 
@@ -431,21 +507,33 @@
     @media (max-width: 1024px) {
       .hero-inner {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 60px;
+      }
+
+      .hero-images {
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       .profile-inner {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 60px;
       }
 
       .history-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 50px;
       }
 
       .history-title {
-        font-size: 48px;
+        font-size: 52px;
+      }
+
+      .pixel-character {
+        width: 150px;
+        height: 210px;
+        right: 5%;
+        bottom: 5%;
       }
     }
 
@@ -458,21 +546,30 @@
 
       nav a {
         margin-left: 20px;
-        font-size: 12px;
+        font-size: 13px;
       }
 
       .site-title h1 {
-        font-size: 20px;
+        font-size: 22px;
       }
 
       .hero {
-        padding: 40px 20px;
+        padding: 60px 20px;
+      }
+
+      .hero-images {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title h2 {
+        font-size: 38px;
+        letter-spacing: 4px;
       }
 
       .profile-section,
       .history-section,
       .fanclub-section {
-        padding: 60px 20px;
+        padding: 80px 20px;
       }
 
       .profile-header h2 {
@@ -481,13 +578,12 @@
 
       .profile-row {
         grid-template-columns: 1fr;
-        gap: 5px;
+        gap: 8px;
       }
 
       .pixel-character {
-        width: 120px;
-        height: 170px;
-        right: 5%;
+        width: 100px;
+        height: 140px;
       }
     }
   </style>
@@ -497,7 +593,9 @@
   <header>
     <div class="header-inner">
       <div class="logo-area">
-        <div class="logo-box">★</div>
+        <div class="logo-box">
+          <img src="画像4.jpg" alt="Stardalia Entertainment">
+        </div>
         <div class="site-title">
           <h1>高城 玲奈</h1>
           <p>Rena Takashiro</p>
@@ -514,11 +612,24 @@
   <!-- ヒーローセクション -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-image">
-        <img src="スクリーンショット 2025-12-08 150126.png" alt="高城玲奈">
+      <div class="hero-images">
+        <div class="hero-image-main">
+          <img src="画像3.jpg" alt="高城玲奈">
+        </div>
+        <div class="hero-image-side">
+          <img src="画像2.jpg" alt="高城玲奈 ポートレート">
+        </div>
       </div>
       <div class="hero-content">
-        <img src="スクリーンショット 2025-12-08 150126.png" alt="高城玲奈 ポートレート">
+        <div class="hero-title">
+          <h2>高城<br>玲奈</h2>
+          <p>Rena Takashiro</p>
+        </div>
+        <div class="hero-description">
+          次世代を担う若手女優。<br>
+          清楚で自然な演技と、心に響く表現力で<br>
+          多くの作品に出演。
+        </div>
         <div class="contact-info">
           <a href="mailto:rena.takashiro@stardalia.jp" class="contact-item">
             <span>📧</span>
@@ -544,7 +655,7 @@
   <section class="profile-section" id="profile">
     <div class="profile-inner">
       <div class="profile-image">
-        <img src="スクリーンショット 2025-12-08 150232.png" alt="高城玲奈 プロフィール">
+        <img src="画像1.jpg" alt="高城玲奈 プロフィール">
       </div>
       <div class="profile-content">
         <div class="profile-header">
@@ -578,7 +689,7 @@
           </div>
         </div>
         <div class="company-credit">
-          @Stardalia Entertainment Promotion
+          Stardalia Entertainment Promotion
         </div>
       </div>
     </div>
@@ -598,7 +709,7 @@
             <li>『月とアトリエ』（2024年）</li>
             <li>『星降る夜に、もう一度』（2025年）</li>
           </ul>
-          <h3 style="margin-top: 40px;">ドラマ</h3>
+          <h3 style="margin-top: 50px;">ドラマ</h3>
           <ul class="history-list">
             <li>『静寂の街』（2022年／NHK）</li>
             <li>『恋の残響』（2023年／TBS）</li>
@@ -609,9 +720,9 @@
         <div class="history-category">
           <h3>受賞歴</h3>
           <ul class="history-list">
-            <li>新人女優賞（『風の行方』／2021年）</li>
-            <li>第10回クリスタルドラマアワード 主演女優賞<br>（『静寂の街』／2022年）</li>
-            <li class="award-highlight">✦ 日本フィルムアーツ大賞 最優秀主演女優賞<br>（『月とアトリエ』／2024年）</li>
+            <li>新人女優賞<br>（『風の行方』／2021年）</li>
+            <li>第10回クリスタルドラマアワード<br>主演女優賞<br>（『静寂の街』／2022年）</li>
+            <li class="award-highlight">✦ 日本フィルムアーツ大賞<br>最優秀主演女優賞<br>（『月とアトリエ』／2024年）</li>
           </ul>
         </div>
       </div>
@@ -621,8 +732,8 @@
   <!-- ファンクラブセクション -->
   <section class="fanclub-section" id="fanclub">
     <div class="fanclub-inner">
-      <h2 class="fanclub-title">高城玲奈 Official Web Site</h2>
-      <p class="fanclub-subtitle">高城玲奈 Official Fanclub</p>
+      <h2 class="fanclub-title">高城玲奈 Official</h2>
+      <p class="fanclub-subtitle">Web Site & Fanclub</p>
       <div class="fanclub-links">
         <a href="#" class="fanclub-link">高城玲奈 Official Web Site</a>
         <a href="#" class="fanclub-link">高城玲奈 Official Fanclub</a>
@@ -631,7 +742,9 @@
         <a href="#">当サイトについて</a>
         <a href="#">利用規約</a>
       </div>
-      <div class="pixel-character"></div>
+      <div class="pixel-character">
+        <img src="画像5.png" alt="高城玲奈 キャラクター">
+      </div>
     </div>
   </section>
 
