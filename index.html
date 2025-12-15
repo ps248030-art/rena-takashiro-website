@@ -4,44 +4,21 @@
   <meta charset="UTF-8">
   <title>rena takashiro</title>
 
-  <!-- フォント -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      font-family: "Inter", "Noto Sans JP", sans-serif;
-      background-color: #f6f6f6;
+      font-family: "Noto Sans JP", sans-serif;
+      background-color: #ffffff;
       color: #111;
-      line-height: 1.9;
+      letter-spacing: 0.03em;
     }
 
-    /* ===== 共通 ===== */
-    section {
-      max-width: 1100px;
-      margin: 120px auto;
-      padding: 0 40px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s ease;
-    }
-
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      font-size: 36px;
-      font-weight: 400;
-      margin-bottom: 60px;
-      letter-spacing: 1px;
-    }
-
-    /* ===== ヒーロー ===== */
+    /* ===== トップ（ループ感） ===== */
     header {
       height: 100vh;
-      background-image: url("スクリーンショット 2025-12-08 150126.png");
+      background-image: url("トップ画像.png"); /* Canvaのメイン画像 */
       background-size: cover;
       background-position: center;
       display: flex;
@@ -50,143 +27,91 @@
     }
 
     header h1 {
-      color: white;
-      font-size: 52px;
+      font-size: 42px;
       font-weight: 300;
-      letter-spacing: 4px;
-      background-color: rgba(0,0,0,0.35);
-      padding: 24px 48px;
+      color: white;
+      background: rgba(0,0,0,0.25);
+      padding: 20px 40px;
     }
 
-    /* ===== プロフィール ===== */
+    section {
+      max-width: 800px;
+      margin: 120px auto;
+      padding: 0 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+
+    /* ===== Profile ===== */
     .profile {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 60px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      gap: 32px;
     }
 
     .profile img {
-      width: 100%;
-      border-radius: 50%;
-      filter: grayscale(100%);
-    }
-
-    /* ===== Works ===== */
-    .works img {
-      width: 100%;
-      height: 520px;
+      width: 260px;
+      height: 260px;
       object-fit: cover;
-      border-radius: 18px;
-      margin-bottom: 60px;
-    }
-
-    /* ===== History（刷新） ===== */
-    .timeline {
-      border-left: 1px solid #ccc;
-      padding-left: 40px;
-    }
-
-    .event {
-      margin-bottom: 60px;
-      position: relative;
-    }
-
-    .event::before {
-      content: "";
-      width: 12px;
-      height: 12px;
-      background-color: #111;
       border-radius: 50%;
-      position: absolute;
-      left: -46px;
-      top: 8px;
     }
 
-    .year {
+    .profile p {
       font-size: 14px;
-      color: #777;
-      margin-bottom: 8px;
+      line-height: 2;
+      text-align: center;
     }
 
-    .event p {
-      margin: 0;
-      font-size: 17px;
+    /* ===== History ===== */
+    .history p {
+      font-size: 14px;
+      line-height: 2.2;
+      margin-bottom: 20px;
     }
 
-    /* ===== フッター ===== */
     footer {
       text-align: center;
-      padding: 60px 0;
+      font-size: 12px;
       color: #888;
-      font-size: 14px;
+      padding: 60px 0;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>rena takashiro</h1>
-  </header>
+<header>
+  <h1>rena takashiro</h1>
+</header>
 
-  <section>
-    <h2>Profile</h2>
-    <div class="profile">
-      <img src="スクリーンショット 2025-12-08 150232.png">
-      <p>
-        アーティスト／パフォーマー。<br>
-        音楽・身体・空間を横断しながら、<br>
-        「人がそこに在ること」をテーマに制作を行っている。
-      </p>
-    </div>
-  </section>
+<section>
+  <h2>Profile</h2>
+  <div class="profile">
+    <img src="face.png" alt="portrait">
+    <p>
+      アーティスト。<br>
+      身体表現と空間を軸に制作を行う。
+    </p>
+  </div>
+</section>
 
-  <section>
-    <h2>Works</h2>
-    <div class="works">
-      <img src="スクリーンショット 2025-12-08 150359.png">
-      <img src="スクリーンショット 2025-12-08 150428.png">
-    </div>
-  </section>
+<section>
+  <h2>History</h2>
+  <div class="history">
+    <p>2023　制作活動を開始</p>
+    <p>2024　学内外で作品を発表</p>
+    <p>2025　個人サイトを公開</p>
+  </div>
+</section>
 
-  <section>
-    <h2>History</h2>
-    <div class="timeline">
-      <div class="event">
-        <div class="year">2023</div>
-        <p>パフォーマンス作品の制作・発表を開始</p>
-      </div>
-
-      <div class="event">
-        <div class="year">2024</div>
-        <p>学内外での展示・発表に参加</p>
-      </div>
-
-      <div class="event">
-        <div class="year">2025</div>
-        <p>個人サイトを公開し、活動をアーカイブ化</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 rena takashiro
-  </footer>
-
-  <script>
-    const sections = document.querySelectorAll("section");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
+<footer>
+  © 2025 rena takashiro
+</footer>
 
 </body>
 </html>
