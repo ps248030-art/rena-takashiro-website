@@ -1,282 +1,90 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rena Takashiro Official Site</title>
-
-<style>
-/* -----------------------------
-    全体の基本設定
-------------------------------*/
-body {
-    margin: 0;
-    font-family: "Yu Gothic", sans-serif;
-    background-color: #ffffff;
-    color: #333;
-}
-
-/* -----------------------------
-    ヘッダー
-------------------------------*/
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 25px;
-    border-bottom: 2px solid #eee;
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
-}
-
-.header-left img {
-    width: 50px;
-    margin-right: 15px;
-}
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #333;
-}
-
-nav a:hover {
-    opacity: 0.7;
-}
-
-/* -----------------------------
-    メインビジュアル
-------------------------------*/
-.main-visual {
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.main-visual img {
-    width: 280px;
-    border-radius: 6px;
-}
-
-/* -----------------------------
-    プロフィールカード
-------------------------------*/
-.profile-section {
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-    flex-wrap: wrap;
-}
-
-.profile-card {
-    background: #fff;
-    width: 90%;
-    max-width: 850px;
-    padding: 25px;
-    border-radius: 10px;
-    display: flex;
-    gap: 25px;
-}
-
-.profile-img {
-    width: 280px;
-    border-radius: 8px;
-}
-
-.profile-text {
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-/* -----------------------------
-    History セクション
-------------------------------*/
-.history {
-    background-image: url("https://example.com/bg.jpg"); /* 仮背景 */
-    background-size: cover;
-    padding: 50px 20px;
-    color: #fff;
-}
-
-.history h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.history-columns {
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-.history-block h3 {
-    margin-bottom: 10px;
-}
-
-.history-block p {
-    line-height: 1.7;
-}
-
-/* -----------------------------
-    ファンクラブ（ドット絵）
-------------------------------*/
-.fanclub {
-    background-image: url("https://example.com/bg2.jpg"); /* 仮背景 */
-    background-size: cover;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.fanclub img {
-    width: 180px;
-    image-rendering: pixelated;
-}
-
-.fanclub h2 {
-    font-size: 32px;
-}
-
-/* -----------------------------
-    フッター
-------------------------------*/
-footer {
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    border-top: 1px solid #ddd;
-}
-
-/* -----------------------------
-    スマホ用レイアウト調整
-------------------------------*/
-@media (max-width: 768px) {
-    nav a {
-        margin: 0 8px;
-        font-size: 15px;
+  <meta charset="UTF-8">
+  <title>rena takashiro</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
     }
 
-    .main-visual img,
+    header {
+      background-image: url("スクリーンショット 2025-12-08 150126.png");
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
     .profile-img {
-        width: 90%;
-        max-width: 300px;
+      width: 200px;
+      border-radius: 50%;
     }
 
-    .profile-card {
-        flex-direction: column;
-        text-align: center;
+    .gallery img {
+      width: 250px;
+      margin: 10px;
     }
 
-    .history h2 {
-        text-align: center;
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
     }
-
-    .history-columns {
-        flex-direction: column;
-    }
-}
-</style>
+  </style>
 </head>
+
 <body>
 
-<!-- ーーーーーーーーーー
-　ヘッダー部分
-ーーーーーーーーーーー -->
-<header>
-    <div class="header-left">
-        <img src="https://example.com/logo.png" alt="logo">
-        <h1>高城 玲奈</h1>
+  <header>
+    rena takashiro
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <img class="profile-img" src="スクリーンショット 2025-12-08 150232.png" alt="profile">
+    <p>
+      アーティスト / パフォーマー<br>
+      音楽と表現を通して世界をつなぐ。
+    </p>
+  </section>
+
+  <section>
+    <h2>History</h2>
+    <div class="gallery">
+      <img src="スクリーンショット 2025-12-08 150359.png" alt="history1">
+      <img src="スクリーンショット 2025-12-08 150428.png" alt="history2">
     </div>
-    <nav>
-        <a href="#">Profile</a>
-        <a href="#">History</a>
-        <a href="#">Fanclub</a>
-    </nav>
-</header>
+  </section>
 
-<!-- ーーーーーーーーーー
-　メインビジュアル
-ーーーーーーーーーーー -->
-<section class="main-visual">
-    <img src="https://example.com/photo1.jpg" alt="photo">
-    <img src="https://example.com/photo2.jpg" alt="photo">
-</section>
+  <section>
+    <h2>Fanclub</h2>
+    <p>
+      最新情報や限定コンテンツはこちらから。
+    </p>
+  </section>
 
-<!-- ーーーーーーーーーー
-　プロフィールカード
-ーーーーーーーーーーー -->
-<section class="profile-section">
-    <div class="profile-card">
-        <img src="https://example.com/profile.jpg" class="profile-img">
-
-        <div class="profile-text">
-            <h2>高城 玲奈</h2>
-            <p>Age：23歳</p>
-            <p>Birthday：2002年10月9日</p>
-            <p>Native Place：神奈川県横浜市</p>
-            <p>Height：162cm</p>
-            <p>Blood：A型</p>
-            <p>Speciality：ピアノ</p>
-        </div>
-    </div>
-</section>
-
-<!-- ーーーーーーーーーー
-　History セクション
-ーーーーーーーーーーー -->
-<section class="history">
-    <h2>history</h2>
-    <div class="history-columns">
-
-        <div class="history-block">
-            <h3>映画</h3>
-            <p>
-                『夏空に溶けて』（2019）<br>
-                『風の在りか』（2021）<br>
-                『心音-しんおん-』（2023）<br>
-                『月とアトリエ』（2024）<br>
-                『星降る夜に、もう一度』（2025）
-            </p>
-
-            <h3>ドラマ</h3>
-            <p>
-                『静寂の街』（2022 / NHK）<br>
-                『恋の残響』（2023 / TBS）<br>
-                『AFTERGLOW』（2023 / Netflix）<br>
-                『シンデレラ・ブルー』（2025 / Netflix）
-            </p>
-        </div>
-
-        <div class="history-block">
-            <h3>受賞歴</h3>
-            <p>
-                第45回シルバースクリーン映画祭 最優秀助演女優賞（2021）<br>
-                第10回クリスタルドラマアワード 主演女優賞（2022）<br>
-                日本フィルムアーツ大賞 最優秀主演女優賞（2024）
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- ーーーーーーーーーー
-　ドット絵ファンクラブ
-ーーーーーーーーーーー -->
-<section class="fanclub">
-    <h2>高城玲奈 Official Fanclub</h2>
-    <img src="https://example.com/pixel.png" alt="pixel">
-</section>
-
-<!-- ーーーーーーーーーー
-　フッター
-ーーーーーーーーーーー -->
-<footer>
-    © Stardalia Entertainment Promotion
-</footer>
+  <footer>
+    © 2025 rena takashiro
+  </footer>
 
 </body>
 </html>
