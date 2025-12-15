@@ -3,51 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <title>rena takashiro</title>
+
   <style>
     body {
       margin: 0;
-      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-      background-color: #f9f9f9;
-      text-align: center;
+      font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.8;
     }
 
+    /* ===== ヘッダー ===== */
     header {
       background-image: url("スクリーンショット 2025-12-08 150126.png");
       background-size: cover;
       background-position: center;
-      height: 300px;
-      color: white;
+      height: 380px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 36px;
-      font-weight: bold;
     }
 
+    header h1 {
+      background-color: rgba(0, 0, 0, 0.45);
+      color: white;
+      padding: 20px 40px;
+      font-size: 40px;
+      letter-spacing: 2px;
+    }
+
+    /* ===== セクション共通 ===== */
     section {
-      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 80px auto;
+      background-color: white;
+      padding: 60px 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
+      font-size: 32px;
+      margin-bottom: 40px;
+      position: relative;
     }
 
-    .profile-img {
-      width: 200px;
+    h2::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background-color: #333;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+
+    /* ===== プロフィール ===== */
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .profile img {
+      width: 220px;
       border-radius: 50%;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ===== ギャラリー ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
     }
 
     .gallery img {
-      width: 250px;
-      margin: 10px;
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     }
 
+    /* ===== フッター ===== */
     footer {
-      background-color: #222;
-      color: white;
-      padding: 20px;
-      margin-top: 40px;
+      text-align: center;
+      padding: 40px;
+      color: #777;
     }
   </style>
 </head>
@@ -55,30 +99,32 @@
 <body>
 
   <header>
-    rena takashiro
+    <h1>rena takashiro</h1>
   </header>
 
   <section>
     <h2>Profile</h2>
-    <img class="profile-img" src="スクリーンショット 2025-12-08 150232.png" alt="profile">
-    <p>
-      アーティスト / パフォーマー<br>
-      音楽と表現を通して世界をつなぐ。
-    </p>
+    <div class="profile">
+      <img src="スクリーンショット 2025-12-08 150232.png" alt="profile">
+      <p>
+        アーティスト / パフォーマー。<br>
+        音楽や身体表現を通して、人と空間の関係性を探る活動を行っている。
+      </p>
+    </div>
   </section>
 
   <section>
-    <h2>History</h2>
+    <h2>Works / History</h2>
     <div class="gallery">
-      <img src="スクリーンショット 2025-12-08 150359.png" alt="history1">
-      <img src="スクリーンショット 2025-12-08 150428.png" alt="history2">
+      <img src="スクリーンショット 2025-12-08 150359.png" alt="work1">
+      <img src="スクリーンショット 2025-12-08 150428.png" alt="work2">
     </div>
   </section>
 
   <section>
     <h2>Fanclub</h2>
     <p>
-      最新情報や限定コンテンツはこちらから。
+      最新情報やイベント、限定コンテンツを発信しています。
     </p>
   </section>
 
