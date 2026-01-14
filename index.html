@@ -55,8 +55,8 @@
     }
 
     .logo-box {
-      width: 55px;
-      height: 55px;
+      width: 60px;
+      height: 60px;
       background: var(--primary);
       display: flex;
       align-items: center;
@@ -67,7 +67,8 @@
     .logo-box img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      padding: 8px;
     }
 
     .site-title h1 {
@@ -104,7 +105,7 @@
 
     /* ヒーローセクション */
     .hero {
-      margin-top: 95px;
+      margin-top: 100px;
       padding: 100px 40px;
       background: linear-gradient(135deg, #faf9f7 0%, #f0ede8 100%);
       position: relative;
@@ -140,26 +141,13 @@
       align-items: start;
     }
 
-    .hero-image-main {
-      position: relative;
-    }
-
-    .hero-image-main img {
+    .hero-image img {
       width: 100%;
-      height: 450px;
-      object-fit: cover;
-      object-position: center 20%;
-      border-radius: 4px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.2);
-    }
-
-    .hero-image-side img {
-      width: 100%;
-      height: 450px;
+      height: 480px;
       object-fit: cover;
       object-position: center;
       border-radius: 4px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.2);
     }
 
     .hero-content {
@@ -470,21 +458,14 @@
       right: 10%;
       bottom: 10%;
       width: 200px;
-      height: 280px;
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      height: auto;
+      filter: drop-shadow(0 15px 40px rgba(0,0,0,0.2));
     }
 
     .pixel-character img {
       width: 100%;
       height: auto;
-      object-fit: contain;
+      image-rendering: pixelated;
     }
 
     /* フッター */
@@ -531,7 +512,6 @@
 
       .pixel-character {
         width: 150px;
-        height: 210px;
         right: 5%;
         bottom: 5%;
       }
@@ -583,7 +563,6 @@
 
       .pixel-character {
         width: 100px;
-        height: 140px;
       }
     }
   </style>
@@ -594,7 +573,7 @@
     <div class="header-inner">
       <div class="logo-area">
         <div class="logo-box">
-          <img src="画像4.jpg" alt="Stardalia Entertainment">
+          <img src="スクリーンショット 2025-12-15 160613.png" alt="Stardalia Entertainment">
         </div>
         <div class="site-title">
           <h1>高城 玲奈</h1>
@@ -613,11 +592,11 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-images">
-        <div class="hero-image-main">
-          <img src="画像3.jpg" alt="高城玲奈">
+        <div class="hero-image">
+          <img src="スクリーンショット 2025-12-15 160522.png" alt="高城玲奈">
         </div>
-        <div class="hero-image-side">
-          <img src="画像2.jpg" alt="高城玲奈 ポートレート">
+        <div class="hero-image">
+          <img src="スクリーンショット 2025-12-15 160454.png" alt="高城玲奈 横顔">
         </div>
       </div>
       <div class="hero-content">
@@ -655,7 +634,7 @@
   <section class="profile-section" id="profile">
     <div class="profile-inner">
       <div class="profile-image">
-        <img src="画像1.jpg" alt="高城玲奈 プロフィール">
+        <img src="スクリーンショット 2025-12-15 160649.png" alt="高城玲奈 プロフィール">
       </div>
       <div class="profile-content">
         <div class="profile-header">
@@ -743,7 +722,7 @@
         <a href="#">利用規約</a>
       </div>
       <div class="pixel-character">
-        <img src="画像5.png" alt="高城玲奈 キャラクター">
+        <img src="スクリーンショット 2025-12-15 160904.png" alt="高城玲奈 キャラクター">
       </div>
     </div>
   </section>
