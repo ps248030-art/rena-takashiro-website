@@ -422,41 +422,70 @@
   </div>
 
   <script>
-    // ステップ切り替え
-    function nextStep(stepNumber) {
-      // 全てのカードを非表示
-      document.querySelectorAll('.card').forEach(card => {
-        card.classList.remove('active');
-      });
-      
-      // 全てのステップインジケーターを非アクティブ
-      document.querySelectorAll('.step').forEach(step => {
-        step.classList.remove('active');
-      });
-      
-      // 指定されたステップを表示
-      document.getElementById('step' + stepNumber).classList.add('active');
-      document.getElementById('step' + stepNumber + '-indicator').classList.add('active');
-      
-      // 画面を上にスクロール
-      window.scrollTo(0, 0);
-    }
+  // 🔴 Colabで出たURLをここに入れる（もう入れてある）
+  const API_BASE = "https://latest-pan-liability-valves.trycloudflare.com";
 
-    // フォーム送信
-    function submitForm(event) {
-      event.preventDefault();
-      
-      // 会員番号を生成（ランダムな8桁の数字）
-      const memberId = 'FC' + Math.floor(10000000 + Math.random() * 90000000);
-      
-      // 会員番号を表示
-      document.getElementById('memberIdDisplay').textContent = memberId;
-      
-      // 完了画面へ
-      nextStep(3);
-      
+  // ステップ切り替え（元のまま）
+  function nextStep(stepNumber) {
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.remove('active');
+    });
+    
+    document.querySelectorAll('.step').forEach(step => {
+      step.classList.remove('active');
+    });
+    
+    document.getElementById('step' + stepNumber).classList.add('active');
+    document.getElementById('step' + stepNumber + '-indicator').classList.add('active');
+    
+    window.scrollTo(0, 0);
+  }
+
+  // フォーム送信（ここが本物の登録処理）
+  async function submitForm(event) {
+    event.preventDefault();
+
+    // 入力値を取得
+    const name = document.getElementById("name").value.trim();
+    const kana = document.getElementById("kana").value.trim();
+    const age = Number(document.getElementById("age").value);
+    const email = document.getElementById("email").value.trim();
+    const gender = document.getElementById("gender").value;
+
+    // 簡単なチェック
+    if (!name || !kana || !age || !email || !gender) {
+      alert("未入力の項目があります");
       return false;
     }
-  </script>
+
+    try {
+      // 🔴 ColabのAPIに送信
+      const res = await fetch(`${API_BASE}/api/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, kana, age, email, gender })
+      });
+
+      const data = await res.json();
+
+      if (!data.ok) {
+        alert("登録に失敗しました");
+        return false;
+      }
+
+      // 会員番号を画面に表示（Colabから返ってきた本物）
+      document.getElementById("memberIdDisplay").textContent = data.member_id;
+
+      // 完了画面へ
+      nextStep(3);
+
+    } catch (err) {
+      alert("通信エラーが発生しました。Colabが起動しているか確認してください。");
+      console.error(err);
+    }
+
+    return false;
+  }
+</script>
 </body>
 </html>
