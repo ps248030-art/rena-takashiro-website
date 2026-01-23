@@ -422,6 +422,7 @@
   </div>
 
   <script>
+    const API_BASE = "https://batteries-previously-dna-outreach.trycloudflare.com";
     // ステップ切り替え
     function nextStep(stepNumber) {
       // 全てのカードを非表示
@@ -443,20 +444,63 @@
     }
 
     // フォーム送信
-    function submitForm(event) {
-      event.preventDefault();
-      
-      // 会員番号を生成（ランダムな8桁の数字）
-      const memberId = 'FC' + Math.floor(10000000 + Math.random() * 90000000);
-      
-      // 会員番号を表示
-      document.getElementById('memberIdDisplay').textContent = memberId;
-      
-      // 完了画面へ
-      nextStep(3);
-      
+    async function submitForm(event) {
+  event.preventDefault();
+
+  const data = {
+    name: document.querySelector("#name").value.trim(),
+    kana: document.querySelector("#kana").value.trim(),
+    age: Number(document.querySelector("#age").value),
+    email: document.querySelector("#email").value.trim(),
+    gender: document.querySelector("#gender").value,
+  };
+
+  if (!data.name || !data.kana || !Number.isFinite(data.age) || !data.email || !data.gender) {
+    alert("未入力があります");
+    return false;
+  }
+
+  const btn = document.querySelector('#registrationForm button[type="submit"]');
+  if (btn) btn.disabled = true;
+
+  try {
+    const res = await fetch(API_BASE + "/api/fanclub/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const j = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      alert("登録に失敗しました（サーバーエラー）");
+      if (btn) btn.disabled = false;
       return false;
     }
+
+    if (j.ok === false && j.error === "already_registered") {
+      alert("このメールアドレスは既に登録されています（重複登録できません）");
+      if (btn) btn.disabled = false;
+      return false;
+    }
+
+    if (j.ok === true && j.member_no) {
+      document.getElementById("memberIdDisplay").textContent = j.member_no;
+      nextStep(3);
+      return false;
+    }
+
+    alert("登録に失敗しました（応答が不正です）");
+    if (btn) btn.disabled = false;
+    return false;
+
+  } catch (err) {
+    console.error(err);
+    alert("通信エラー：Colabが起動しているか確認して");
+    if (btn) btn.disabled = false;
+    return false;
+  }
+}
   </script>
 </body>
 </html>
