@@ -1,6 +1,5 @@
 // ★ここだけ毎回貼り替える（Colabで出る trycloudflare のURL）
-const API_BASE = "PASTE_TRYCLOUDFLARE_URL_HERE";
-
+const API_BASE = "https://wesley-relating-skating-meetings.trycloudflare.com";
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#registrationForm");
   const msg = document.querySelector("#msg");
