@@ -1,6 +1,5 @@
 // ★ここだけ毎回貼り替える（Colabで出る trycloudflare のURL）
-const API_BASE = "https://batteries-previously-dna-outreach.trycloudflare.com";
-
+const API_BASE = window.API_BASE;
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#registrationForm");
   const msg = document.querySelector("#msg");
