@@ -1,2 +1,2 @@
-window.API_BASE = "https://jungle-birds-hospitality-immediate.trycloudflare.com";
+window.API_BASE = "https://untitled-fountain-compatible-delicious.trycloudflare.com";
 
