@@ -1,2 +1,1 @@
-window.API_BASE = "https://pools-ambassador-scsi-usc.trycloudflare.com";
-
+window.API_BASE = "https://jungle-birds-hospitality-immediate.trycloudflare.com";
